@@ -1,2 +1,7 @@
 ---
 # defaults file for firefox
+firefox_lang: en-US
+firefox_arch: linux64
+firefox_base_url: "https://download.mozilla.org/?product=firefox-aurora-latest-ssl&os={{ firefox_arch }}&lang={{ firefox_lang }}"
+firefox_download_directory: /usr/local/src
+firefox_download_tarball: "firefox-aurora-latest-{{ firefox_arch }}-{{ firefox_lang }}.tar.bz2"
