@@ -20,5 +20,5 @@
   become: yes
   unarchive:
     src: "{{ firefox_download_directory }}/{{ firefox_download_tarball }}"
-    dest: "{{ firefox_download_directory }}/"
+    dest: "{{ firefox_install_directory }}"
     copy: no
