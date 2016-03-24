@@ -1,4 +1,4 @@
 ---
 - hosts: all
   roles:
-    - role: firefox
+    - role: ansible-role-firefox
