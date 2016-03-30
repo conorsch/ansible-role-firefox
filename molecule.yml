@@ -20,3 +20,5 @@ vagrant:
 
   instances:
     - name: firefox-desktop
+      raw_config_args:
+        - "vm.synced_folder '.', '/vagrant', disabled: true"
