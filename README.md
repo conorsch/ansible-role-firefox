@@ -7,17 +7,16 @@ downloaded, extracted, symlinked to /usr/local/bin.
 
 Role Variables
 --------------
-
 ```
-# defaults file for firefox
 firefox_lang: en-US
 firefox_arch: linux64
-firefox_download_url: "https://download.mozilla.org/?product=firefox-aurora-latest-ssl&os={{ firefox_arch }}&lang={{ firefox_lang }}"
+firefox_download_base_url: "https://download.mozilla.org/?product=firefox-aurora-latest-ssl"
+firefox_download_url: "{{ firefox_download_base_url }}&os={{ firefox_arch }}&lang={{ firefox_lang }}"
 firefox_download_directory: /usr/local/src
 firefox_download_tarball: "firefox-aurora-latest-{{ firefox_arch }}-{{ firefox_lang }}.tar.bz2"
 
-# Base directory into which firefox will be installed.
-# A subdirectory named "firefox" will be created during tarball extraction.
+# Base directory into which firefox will be installed. A subdirectory
+# name "firefox" will be automatically created during tarball extraction.
 firefox_install_directory: /opt
 
 firefox_create_symlink: true
