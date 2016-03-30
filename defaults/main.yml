@@ -12,4 +12,4 @@ firefox_install_directory: /opt
 
 firefox_create_symlink: true
 firefox_symlink_src: "{{ firefox_install_directory }}/firefox/firefox"
-firefox_symlink_dest: "/usr/local/bin/firefox"
+firefox_symlink_dest: /usr/local/bin/firefox
