@@ -22,6 +22,7 @@
     copy: no
 
 - name: Create symlink for Firefox binary.
+  become: yes
   file:
     state: link
     src: "{{ firefox_symlink_src }}"
