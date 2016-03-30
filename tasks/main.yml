@@ -22,3 +22,10 @@
     src: "{{ firefox_download_directory }}/{{ firefox_download_tarball }}"
     dest: "{{ firefox_install_directory }}"
     copy: no
+
+- name: Create symlink for Firefox binary.
+  file:
+    state: link
+    src: "{{ firefox_symlink_src }}"
+    dest: "{{ firefox_symlink_dest }}"
+  when: firefox_create_symlink == true
