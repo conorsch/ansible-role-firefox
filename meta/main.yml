@@ -1,21 +1,16 @@
+---
 galaxy_info:
   author: Conor Schaefer (@conorsch)
-  description: Installs Firefox Developer Edition.
+  description: Installs latest version of Firefox on Debian-like distros.
   license: MIT
   min_ansible_version: 1.9
   platforms:
     - name: Debian
       versions:
-        - jessie
-        # Ansible Galaxy doesn't understand stretch and sid,
-        # but at least stretch does indeed work.
-        # - stretch
-        # - sid
+        - stretch
     - name: Ubuntu
       versions:
-        - trusty
-        - vivid
-        - wily
+        - xenial
   galaxy_tags:
     - workstation
     - system

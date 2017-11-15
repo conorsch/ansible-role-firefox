@@ -9,4 +9,4 @@
   become: yes
   apt:
     name: firefox
-    state: latest
+    state: present
