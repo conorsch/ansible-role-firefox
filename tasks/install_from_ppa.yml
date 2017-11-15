@@ -1,11 +1,17 @@
 ---
-- name: Add PPA for Firefox Developer Edition.
-  become: yes
-  apt_repository:
-    repo: ppa:ubuntu-mozilla-daily/firefox-aurora
+- name: Add Mozilla apt repo GPG public key.
+  apt_key:
+    data: "{{ lookup('file', 'mozilla-firefox-apt-key.asc') }}"
     state: present
 
-- name: Install Firefox Developer Edition
+- name: Add Mozilla Daily apt repo for Firefox.
+  become: yes
+  apt_repository:
+    # Repo URL taken from: https://launchpad.net/~mozillateam/+archive/ubuntu/firefox-next
+    repo: deb http://ppa.launchpad.net/mozillateam/firefox-next/ubuntu xenial main
+    state: present
+
+- name: Install Firefox.
   become: yes
   apt:
     name: firefox
