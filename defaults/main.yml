@@ -14,3 +14,17 @@ firefox_install_directory: /opt
 firefox_create_symlink: true
 firefox_symlink_src: "{{ firefox_install_directory }}/firefox/firefox"
 firefox_symlink_dest: /usr/local/bin/firefox
+
+# Apt preferences to ensure stable repos are prioritized. In the task
+# list we'll install Firefox Quantum from the "testing" repo via
+# a task parameter.
+firefox_apt_preferences_content: |-
+  Explanation: Uninstall or do not install any Debian-originated
+  Explanation: package versions other than those in the stable distro
+  Package: *
+  Pin: release a=stable
+  Pin-Priority: 900
+
+  Package: *
+  Pin: release o=Debian
+  Pin-Priority: -10
