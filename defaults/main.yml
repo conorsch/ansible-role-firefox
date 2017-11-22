@@ -1,10 +1,11 @@
 ---
 firefox_lang: en-US
-firefox_arch: linux64
-firefox_download_base_url: "https://download.mozilla.org/?product=firefox-aurora-latest-ssl"
-firefox_download_url: "{{ firefox_download_base_url }}&os={{ firefox_arch }}&lang={{ firefox_lang }}"
+firefox_arch: linux-x86_64
+firefox_version: "57.0"
+firefox_download_base_url: "https://download-installer.cdn.mozilla.net/pub/firefox/releases"
+firefox_download_url: "{{ firefox_download_base_url }}/{{ firefox_version }}/{{ firefox_arch }}/{{ firefox_lang }}/firefox-{{ firefox_version }}.tar.bz2"
+firefox_download_tarball: "{{ firefox_download_url|basename }}"
 firefox_download_directory: /usr/local/src
-firefox_download_tarball: "firefox-aurora-latest-{{ firefox_arch }}-{{ firefox_lang }}.tar.bz2"
 
 # Base directory into which firefox will be installed. A subdirectory
 # name "firefox" will be automatically created during tarball extraction.
